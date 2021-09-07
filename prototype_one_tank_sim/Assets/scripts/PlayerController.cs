@@ -5,9 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float speed = 10.0f;
-    public float turnSpeed;
-    //projectile
+    public float turnSpeed = 100.0f;
 
+    // left right
+    public float hInput;
+    // forward and back
+    public float vInput;
+
+    // projectile
 
     // Start is called before the first frame update
     void Start() {
@@ -16,6 +21,14 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        // button press values for horizontal and vertical inputs
+        hInput = Input.GetAxis("Horizontal");
+        vInput = Input.GetAxis("Vertical");
+
+        //makes the tank go left and right
+        transform.Translate(Vector3.right * turnSpeed * Time.deltaTime * hInput);
+        //makes the tank go forward and backwards
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * vInput);
+
     }
 }
