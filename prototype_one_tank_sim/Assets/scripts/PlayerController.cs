@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
         vInput = Input.GetAxis("Vertical");
 
         //makes the tank go left and right
-        transform.Translate(Vector3.right * turnSpeed * Time.deltaTime * hInput);
+        transform.Rotate(Vector3.up, turnSpeed * hInput * Time.deltaTime);
         //makes the tank go forward and backwards
         transform.Translate(Vector3.forward * speed * Time.deltaTime * vInput);
 
