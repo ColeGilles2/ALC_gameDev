@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
       value: Oil_Barrel (4)
@@ -341,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
       value: Oil_Barrel (2)
@@ -397,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 2273620583757123438, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
@@ -545,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Crate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4362849569585166327, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
 --- !u!4 &912953840 stripped
@@ -608,6 +624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
       value: Oil_Barrel (3)
@@ -669,6 +689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Crate (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4362849569585166327, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
 --- !u!1001 &1333749078
@@ -721,6 +745,10 @@ PrefabInstance:
     - target: {fileID: 2273620583757123438, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
@@ -920,6 +948,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
       value: Oil_Barrel (8)
@@ -981,6 +1013,10 @@ PrefabInstance:
     - target: {fileID: 2273620583757123438, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
@@ -1155,6 +1191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_Crate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4362849569585166327, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
 --- !u!1001 &1988810352
@@ -1207,6 +1247,10 @@ PrefabInstance:
     - target: {fileID: 2273620583757123438, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
@@ -1422,6 +1466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132523400697420872, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571032180796480298, guid: 42bd75aa1731345bfaf9fd726777eda8, type: 3}
       propertyPath: m_Name
       value: Oil_Barrel
@@ -1492,6 +1540,10 @@ PrefabInstance:
     - target: {fileID: 3917113799879640112, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
       propertyPath: m_Name
       value: Box_Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4362849569585166327, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd2f12c93e5c44979ff2e42c1ee1906, type: 3}
