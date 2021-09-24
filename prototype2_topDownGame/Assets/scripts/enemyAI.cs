@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class enemyAI : MonoBehaviour {
+
     // Start is called before the first frame update
     void Start() {
         
@@ -10,6 +11,15 @@ public class enemyAI : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+
     }
+
+
+//not working
+    void onTrigger(Collider2D other) {
+        if (other.gameObject.CompareTag("Bullet")) {
+            Destroy(gameObject);
+        }
+    }
+
 }
