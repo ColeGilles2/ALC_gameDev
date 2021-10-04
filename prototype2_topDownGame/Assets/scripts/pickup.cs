@@ -10,6 +10,7 @@ public class pickup : MonoBehaviour {
 
     public GameManager gameManager;
 
+    // key pickup and then destroy key
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
             gameManager.hasKey = true;

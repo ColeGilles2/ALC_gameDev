@@ -25,14 +25,15 @@ public class enemyAI : MonoBehaviour {
     }
 
     //occurs at a fixed rate per frame
+    // framerate ixed function to move player
     void FixedUpdate() {
         moveEnemy(movement);
     }
-
+    //enemy move funciton
     void moveEnemy(Vector2 direction) {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-
+    //check if bullet inside enemy
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Bullet")) {
             Destroy(gameObject);

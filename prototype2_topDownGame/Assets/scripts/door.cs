@@ -8,6 +8,7 @@ public class door : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         
+        //check for key and if it's player
         if (other.CompareTag("Player") && gameManager.hasKey == true) {
             print("you unlocked the door");
             gameManager.isDoorLocked = false;
