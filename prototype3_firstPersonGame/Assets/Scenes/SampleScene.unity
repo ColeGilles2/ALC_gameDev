@@ -537,8 +537,8 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 5
   lookSensetivity: 5
-  maxLookX: 5
-  minLookX: 5
+  maxLookX: 20
+  minLookX: -20
 --- !u!1 &806043428
 GameObject:
   m_ObjectHideFlags: 0
