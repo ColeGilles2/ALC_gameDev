@@ -36,14 +36,14 @@ public class PlayerController : MonoBehaviour {
         float z = Input.GetAxis("Vertical") * moveSpeed;
 
         Vector3 dir = transform.right * x + transform.forward * z;
-        dir = rb.velocity.y;
+        dir.y = rb.velocity.y;
         rb.velocity = dir;
     } 
 
     void Jump() {
         //cast ray to ground
         Ray ray = new Ray(transform.position, Vector3.down);
-        //check ray lenght to jump
+        //check ray lenght to jump 
         if (Physics.Raycast(ray, 1.1f))
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
