@@ -33,13 +33,15 @@ public class Weapon : MonoBehaviour {
     }
 
     public void Shoot() {
+        //adjust shoot time and reduce ammo by one
         lastShootTime = Time.time;
         curAmmo = curAmmo - 1;
 
+        // create bullet
         GameObject bullet = Instantiate(bulletProjectile, muzzle.position, muzzle.rotation);
 
         //set volicty of bulletprojectile
-        bullet.GetComponent<RigidBody>().velocity = muzzle.forward * bulletSpeed;
+        bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
 
     // Start is called before the first frame update
@@ -55,3 +57,4 @@ public class Weapon : MonoBehaviour {
 
 
 }
+
