@@ -16,13 +16,12 @@ public class PlayerController : MonoBehaviour {
     //componemts
     private Camera cam; // declares a camera
     private Rigidbody rb; // finds rigidbody
-    private Weapon weapon;
+    private Weapon weapon; //finds weapon
     
     void Awake() {
         //get components
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
-
         weapon = GetComponent<Weapon>();
     }
 
@@ -42,9 +41,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Move() {
+        //get buttons
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float z = Input.GetAxis("Vertical") * moveSpeed;
 
+        //movement
         Vector3 dir = transform.right * x + transform.forward * z;
         dir.y = rb.velocity.y;
         rb.velocity = dir;
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void CamLook() {
+        //mouse axis
         float y = Input.GetAxis("Mouse X") * lookSensetivity;
         rotX += Input.GetAxis("Mouse Y") * lookSensetivity; 
 

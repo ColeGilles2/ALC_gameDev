@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public GameObject bulletProjectile;
-    public Transform muzzle;
-    public int curAmmo;
-    public int maxAmmo;
-    public bool infiniteAmmo;
-    public float bulletSpeed;
-    public float shootRate;
-    public float lastShootTime;
-    public bool isPlayer;
+    //data types
+    public GameObject bulletProjectile; //bullet game object
+    public Transform muzzle; // jusszle transform
+    public int curAmmo; //current ammo
+    public int maxAmmo; // how much ammo you can have 
+    public bool infiniteAmmo; //infite ammo
+    public float bulletSpeed; //bullet seed
+    public float shootRate; //shoot rate 
+    public float lastShootTime; //time since lats shot
+    public bool isPlayer; //check if player 
     
     void Awake() {
         //are we still attached to player?
@@ -43,18 +44,6 @@ public class Weapon : MonoBehaviour {
         //set volicty of bulletprojectile
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
     }
-
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
-    }
-
-
 
 }
 
