@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     //data types
-    public GameObject bulletProjectile; //bullet game object
+    public ObjectPool bulletPool; //bullet game object
     public Transform muzzle; // jusszle transform
     public int curAmmo; //current ammo
     public int maxAmmo; // how much ammo you can have 
@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour {
         //are we still attached to player?
         if (GetComponent<PlayerController>()) {
             isPlayer = true;
+            Screen.lockCursor = true;
         }
     }
 
@@ -39,7 +40,9 @@ public class Weapon : MonoBehaviour {
         curAmmo = curAmmo - 1;
 
         // create bullet
-        GameObject bullet = Instantiate(bulletProjectile, muzzle.position, muzzle.rotation);
+        GameObject bullet = bulletPool.GetObject();
+        bullet.transform.position = muzzle.position;
+        bullet.transform.rotation = muzzle.rotation;
 
         //set volicty of bulletprojectile
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
