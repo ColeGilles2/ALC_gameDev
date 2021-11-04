@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
         weapon = GetComponent<Weapon>();
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame

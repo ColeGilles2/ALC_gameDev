@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using System.Linq;
+
+//https://github.com/mr-powell/ALC_Game_Dev_2021_22/blob/main/Prototype%203%20-%20First%20Person%20Game%20A/Assets/Scripts/Enemy.cs
 
 public class Enemy : MonoBehaviour {
 
     [Header("Stats")]
-    public int curHP, maxHp, ScoreToGive;
+    public int curHP;
+    public int maxHp;
+    public int ScoreToGive;
 
     [Header("Movement")]
-    public float moveSpeed, attackRange, yPathOffset;
+    public float moveSpeed;
+    public float attackRange;
+
+    public float yPathOffset;
 
     private List<Vector3> path;
 
@@ -18,16 +27,19 @@ public class Enemy : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        curHP = maxHp;
+
         //gather components
         weapon = GetComponent<weapon>();
         target = FindOjectOfType<PlayerController>().GameObject;
+
+        InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
 
     void UpdatePath() {
         //calculate a pathto the target
         NavMeshPath navMeshPath = new NavMeshPath();
-
-        navMeshPath.CalculatePath(this.transform.position, target.transform.position, navMeshPath);
+        NavMesh.CalculatePath(transform.position, target.transform.position, NavMesh.AllAreas, navMeshPath);
 
         //save calculated oath to list
         path = navMeshPath.corners.ToList();
@@ -38,15 +50,41 @@ public class Enemy : MonoBehaviour {
             return;
 
         //move towards closest path
-        transform.position = Vector3.MoveTowards(transform.poistion, path[0] + new Vector3(0, yPathOffset, 0),
+        transform.position = Vector3.MoveTowards(transform.position, path[0] + new Vector3(0, yPathOffset, 0),
          moveSpeed * Time.deltaTime);
 
          if(transform.position == path[0] + new Vector3(0, yPathOffset, 0))
             path.RemoveAt(0);
     }
 
+    public void TakeDamage(int damage) {
+        curHP -= damage;
+
+        if(curHP <= 0) {
+            Die();
+        }
+    }
+
+    void Die() {
+        Destroy(gameObject);
+    } 
+
     // Update is called once per frame
     void Update() {
-        
+        //look at target
+        Vector3 dir = (target.transform.position - transform.position).normalized;
+        float angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
+
+        transform.eulerAngles = Vector3.up * angle;
+
+        //get distance from enemy
+        float dist = Vector3.Distance(transform.position, target.transform.position);
+
+        if(dist <= attackRange) {
+            if (weapon.CanShoot())
+                weapon.Shoot();
+        } else {
+            ChaseTarget();
+        }
     }
 }

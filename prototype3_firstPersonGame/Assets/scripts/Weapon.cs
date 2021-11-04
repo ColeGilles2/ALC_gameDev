@@ -19,7 +19,6 @@ public class Weapon : MonoBehaviour {
         //are we still attached to player?
         if (GetComponent<PlayerController>()) {
             isPlayer = true;
-            Screen.lockCursor = true;
         }
     }
 
@@ -37,7 +36,7 @@ public class Weapon : MonoBehaviour {
     public void Shoot() {
         //adjust shoot time and reduce ammo by one
         lastShootTime = Time.time;
-        curAmmo = curAmmo - 1;
+        curAmmo--;
 
         // create bullet
         GameObject bullet = bulletPool.GetObject();
