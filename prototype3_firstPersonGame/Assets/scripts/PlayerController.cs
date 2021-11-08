@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    // movement 
+    [Header("Stats")]
+    public int curHP;
+    public int maxHP;
+
+    [Header("Movement")]
     public float moveSpeed; //how fast move
     public float jumpForce; // how high can jumpp
 
-    //camera
+    [Header("Camera")]
     public float lookSensetivity; //sensetivity
     public float maxLookX; //how low you can look
     public float minLookX; // how high you can look
     private float rotX; // current x position
 
-    //componemts
+    [Header("Components")]
     private Camera cam; // declares a camera
     private Rigidbody rb; // finds rigidbody
     private Weapon weapon; //finds weapon
@@ -72,6 +76,18 @@ public class PlayerController : MonoBehaviour {
         //applying the rotation to camera
         cam.transform.localRotation = Quaternion.Euler(-rotX, 0, 0);
         transform.eulerAngles += Vector3.up * y;
+    }
+
+    public void TakeDamage(int damage) {
+        curHP -= damage;
+
+        if(curHP <= 0) {
+            Die();
+        }
+    } 
+
+    void Die() {
+        print("You're trash kid");
     }
 
 }

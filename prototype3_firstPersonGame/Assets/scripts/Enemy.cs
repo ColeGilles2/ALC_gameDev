@@ -30,8 +30,8 @@ public class Enemy : MonoBehaviour {
         curHP = maxHp;
 
         //gather components
-        weapon = GetComponent<weapon>();
-        target = FindOjectOfType<PlayerController>().GameObject;
+        weapon = GetComponent<Weapon>();
+        target = FindObjectOfType<PlayerController>().gameObject;
 
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
     }
