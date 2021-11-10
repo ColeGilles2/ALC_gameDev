@@ -18,12 +18,18 @@ public class Bullet : MonoBehaviour {
         shootTime = Time.time;
     }
 
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player"))
+            other.GetComponent<Enemy>().TakeDamage(damage);
+
+        gameObject.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update() {
         if (Time.time - shootTime >= lifeTime) {
             gameObject.SetActive(false);
         }
-
         
     }
 }

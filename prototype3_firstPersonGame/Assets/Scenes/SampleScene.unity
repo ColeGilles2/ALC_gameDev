@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: aefa25c285dab4116b0fa1f54b5b3f99, type: 2}
 --- !u!1 &88357592
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +614,8 @@ GameObject:
   m_Name: healthPickup (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &265677203
 BoxCollider:
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 269783823}
   - component: {fileID: 269783827}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: tube
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -961,7 +961,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &484132220
 BoxCollider:
@@ -1150,8 +1150,8 @@ GameObject:
   m_Name: healthPickup (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &569807802
 BoxCollider:
@@ -1451,6 +1451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7359dbbda02412db981dfadc3e938c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curHP: 0
+  maxHP: 0
   moveSpeed: 5
   jumpForce: 5
   lookSensetivity: 15
@@ -1714,8 +1716,8 @@ GameObject:
   m_Name: healthPickup (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &906026393
 BoxCollider:
@@ -1904,8 +1906,8 @@ GameObject:
   m_Name: healthPickup (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &914562059
 BoxCollider:
@@ -2083,8 +2085,8 @@ GameObject:
   m_Name: healthPickup (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &973830139
 BoxCollider:
@@ -2272,6 +2274,7 @@ GameObject:
   - component: {fileID: 1102362347}
   - component: {fileID: 1102362345}
   - component: {fileID: 1102362344}
+  - component: {fileID: 1102362346}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -2314,6 +2317,24 @@ MonoBehaviour:
   shootRate: 0.3
   lastShootTime: 0
   isPlayer: 0
+--- !u!114 &1102362346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102362343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf954881f4994dd383cda74dc1deaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHP: 0
+  maxHp: 7
+  ScoreToGive: 8
+  moveSpeed: 2
+  attackRange: 5
+  yPathOffset: 1
 --- !u!54 &1102362347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2615,8 +2636,8 @@ GameObject:
   m_Name: healthPickup (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1500414614
 BoxCollider:
@@ -2710,8 +2731,8 @@ GameObject:
   m_Name: healthPickup (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1549108960
 BoxCollider:
@@ -2841,8 +2862,8 @@ GameObject:
   m_Name: healthPickup (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1586524413
 BoxCollider:
@@ -3162,8 +3183,8 @@ GameObject:
   m_Name: healthPickup (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1717495320
 BoxCollider:
@@ -3368,8 +3389,8 @@ GameObject:
   m_Name: healthPickup (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!23 &1855629672
 MeshRenderer:
@@ -3545,8 +3566,8 @@ GameObject:
   m_Name: healthPickup (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!54 &1952921715
 Rigidbody:
@@ -3738,8 +3759,8 @@ GameObject:
   m_Name: healthPickup (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &2080878690
 BoxCollider:

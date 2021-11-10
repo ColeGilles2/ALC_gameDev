@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour  {
  
     private Vector3 mousePosition;
-    private float moveSpeed = 1.0f;
+    private float moveSpeed = 2.0f;
     private float timer = 3.0f;
     // can dash
     private bool dashCheck = true;

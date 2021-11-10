@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
 
-//https://github.com/mr-powell/ALC_Game_Dev_2021_22/blob/main/Prototype%203%20-%20First%20Person%20Game%20A/Assets/Scripts/Enemy.cs
-
 public class Enemy : MonoBehaviour {
 
     [Header("Stats")]
@@ -24,6 +22,7 @@ public class Enemy : MonoBehaviour {
     private Weapon weapon;
     private GameObject target;
 
+    private Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start() {
