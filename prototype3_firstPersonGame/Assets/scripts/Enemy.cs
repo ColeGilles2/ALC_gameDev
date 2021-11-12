@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
     private Weapon weapon;
     private GameObject target;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start() {
@@ -65,7 +65,10 @@ public class Enemy : MonoBehaviour {
     }
 
     void Die() {
-        Destroy(gameObject);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.AddForce(Vector3.back * 10, ForceMode.Impulse); 
+        rb.AddForce(Vector3.up * 5, ForceMode.Impulse); 
+        Destroy(gameObject,1);
     } 
 
     // Update is called once per frame

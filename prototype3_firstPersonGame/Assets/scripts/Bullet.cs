@@ -20,8 +20,11 @@ public class Bullet : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player"))
+            other.GetComponent<PlayerController>().TakeDamage(damage);
+        else if (other.CompareTag("Enemy"))
             other.GetComponent<Enemy>().TakeDamage(damage);
 
+        //turn off bullet    
         gameObject.SetActive(false);
     }
 
