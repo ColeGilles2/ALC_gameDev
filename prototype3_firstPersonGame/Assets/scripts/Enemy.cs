@@ -58,8 +58,8 @@ public class Enemy : MonoBehaviour {
 
     void Die() {
         rb.constraints = RigidbodyConstraints.None;
-        rb.AddForce(Vector3.back * 10, ForceMode.Impulse); 
-        rb.AddForce(Vector3.up * 5, ForceMode.Impulse); 
+        rb.AddForce(Vector3.back * 2, ForceMode.Impulse); 
+        rb.AddForce(Vector3.up * 1, ForceMode.Impulse); 
         Destroy(gameObject, 1);
     } 
 
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour {
         float dist = Vector3.Distance(transform.position, target.transform.position);
 
         if(dist <= attackRange) {
-            if (weapon.CanShoot())
+            if (weapon.CanShoot() && curHP > 0)
                 weapon.Shoot();
         } else {
             ChaseTarget();

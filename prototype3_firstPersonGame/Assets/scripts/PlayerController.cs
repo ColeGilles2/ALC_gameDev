@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -88,6 +89,8 @@ public class PlayerController : MonoBehaviour {
 
     void Die() {
         print("You're trash kid");
+        GameObject change = GameObject.FindGameObjectWithTag("Manager");
+        change.GetComponent<NextScene>().Restart();
     }
 
     public void GiveHealth(int amountToGive) {
