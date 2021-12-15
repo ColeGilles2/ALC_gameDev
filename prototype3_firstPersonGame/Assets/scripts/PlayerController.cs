@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour {
 
     void Die() {
         print("You're trash kid");
-        GameObject change = GameObject.FindGameObjectWithTag("Manager");
-        change.GetComponent<NextScene>().Restart();
+        //GameObject change = GameObject.FindGameObjectWithTag("Manager");
+        //change.GetComponent<NextScene>().Restart();
     }
 
     public void GiveHealth(int amountToGive) {
