@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour {
     void Die() {
         rb.constraints = RigidbodyConstraints.None;
         rb.AddForce(Vector3.back * 2, ForceMode.Impulse); 
-        rb.AddForce(Vector3.up * 1, ForceMode.Impulse); 
+        rb.AddForce(Vector3.up * 10, ForceMode.Impulse); 
         Destroy(gameObject, 1);
     } 
 
