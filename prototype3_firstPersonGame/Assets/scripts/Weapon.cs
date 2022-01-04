@@ -22,8 +22,8 @@ public class Weapon : MonoBehaviour {
         //are we still attached to player?
         if (GetComponent<PlayerController>()) {
             isPlayer = true;
-            audioSource = GetComponent<AudioSource>();
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     //can we shoot
