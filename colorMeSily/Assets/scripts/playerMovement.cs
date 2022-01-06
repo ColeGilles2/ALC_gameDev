@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour  {
+public class PlayerMovement : MonoBehaviour  {
+
+    public bool run;// = true;
  
     private Vector3 mousePosition;
     private float moveSpeed = 2.0f;
@@ -18,7 +20,7 @@ public class playerMovement : MonoBehaviour  {
 
     // Use this for initialization
     void Start () {
-
+        run = true;
     }
    
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class playerMovement : MonoBehaviour  {
             mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed * Time.deltaTime);
-
+     
         // ADD TIMER FOR DASH
         if (Input.GetMouseButton(0)) {
             if (dashCheck == true) {
@@ -35,6 +37,6 @@ public class playerMovement : MonoBehaviour  {
         }
 
         //TIMER
-        Debug.Log(timer);
+        //Debug.Log(timer);
     }
 }
