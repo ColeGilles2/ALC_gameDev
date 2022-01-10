@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour  {
  
     private Vector3 mousePosition;
     private float moveSpeed = 2.0f;
-    private float timer = 3.0f;
+   // private float timer = 3.0f;
     // can dash
     private bool dashCheck = true;
+
+    public string color;
  
     void dash() {
         mousePosition = Input.mousePosition;
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour  {
     // Use this for initialization
     void Start () {
         run = true;
+
+        color = "blue";
     }
    
     // Update is called once per frame
@@ -35,8 +39,5 @@ public class PlayerMovement : MonoBehaviour  {
                 dash();
             }
         }
-
-        //TIMER
-        //Debug.Log(timer);
     }
 }
