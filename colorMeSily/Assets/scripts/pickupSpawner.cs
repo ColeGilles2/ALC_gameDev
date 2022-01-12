@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawer : MonoBehaviour {
+public class pickupSpawner : MonoBehaviour {
 
-    public GameObject enemy;
+    public GameObject player;
+
+    public GameObject pickup;
+    public PlayerMovement playerMovement;
 
     public float spawn;
     public float spawnMaster;
 
     // Start is called before the first frame update
     void Start() {
-        spawnMaster = 1.2f;
+        player = GameObject.FindWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
+
+        spawnMaster = 2.5f;
         spawn = spawnMaster;
-       // Instantiate(enemy);
     }
 
     // Update is called once per frame
@@ -21,7 +26,7 @@ public class Spawer : MonoBehaviour {
        if (spawn > 0.1f) {
            spawn -= Time.deltaTime;
        } else {
-           Instantiate(enemy);
+           Instantiate(pickup);
            spawn = spawnMaster;
        }
     }

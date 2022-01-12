@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour  {
     private bool dashCheck = true;
 
     public string color;
+
+    public GameObject[] colors;
+
  
     void dash() {
         mousePosition = Input.mousePosition;
@@ -24,11 +27,31 @@ public class PlayerMovement : MonoBehaviour  {
     void Start () {
         run = true;
 
-        color = "blue";
+        color = "green";
     }
    
     // Update is called once per frame
     void Update () {
+
+        if (color == "red") {
+            for (int i = 0; i < colors.Length; i ++) {
+                colors[i].SetActive(false);
+            }
+            colors[0].SetActive(true);
+        } else if (color == "blue") {
+            for (int i = 0; i < colors.Length; i ++) {
+                colors[i].SetActive(false);
+            }
+            colors[1].SetActive(true);
+        } else if (color == "green") {
+            for (int i = 0; i < colors.Length; i ++) {
+                colors[i].SetActive(false);
+            }
+            colors[2].SetActive(true);
+        } else {
+            Destroy(gameObject);
+        }
+
             mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed * Time.deltaTime);
